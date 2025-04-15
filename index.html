@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables Assignment</title>
+</head>
+<body>
+    <h1>JavaScript Variables Assignment</h1>
+    <p id="output"></p> <!-- This will display the output -->
+
+    <script>
+        // Step 1: Create three variables
+        let name = "Julia";
+        let age = 21;
+        let city = "Ohio";
+
+        // Step 2: Display the variables
+        console.log("Name:", name);
+        console.log("Age:", age);
+        console.log("City:", city);
+        document.getElementById("output").innerHTML = `Name: ${name}, Age: ${age}, City: ${city}`;
+
+        // Step 3: Update the variables
+        name = "Tim";
+        age = 25;
+        city = "Los Angeles";
+
+        console.log("Updated Name:", name);
+        console.log("Updated Age:", age);
+        console.log("Updated City:", city);
+
+        // Step 4: Add/Concatenate two variables and display result
+        let fullInfo = name + " from " + city;
+        console.log("Concatenated Info:", fullInfo);
+        alert(fullInfo); // Display in alert box
+
+        // Step 5: Perform math with a variable
+        let yearsUntil30 = 30 - age; // Subtracting age from 30
+        console.log("Years until 30:", yearsUntil30);
+        document.getElementById("output").innerHTML += `<br>Updated Name: ${name}, Updated Age: ${age}, Updated City: ${city}`;
+        document.getElementById("output").innerHTML += `<br>Concatenated Info: ${fullInfo}`;
+        document.getElementById("output").innerHTML += `<br>Years until 30: ${yearsUntil30}`;
+    </script>
+</body>
+</html>
