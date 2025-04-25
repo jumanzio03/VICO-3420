@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Example</title>
+</head>
+<body>
+
+  <h1>My Sample Form</h1>
+
+  <form id="myForm">
+    <form id="myForm">
+        <!-- Text field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+      
+        <!-- Number field -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+      
+        <!-- Checkbox -->
+        <label>
+          <input type="checkbox" id="subscribe" name="subscribe">
+          Subscribe to newsletter
+        </label><br><br>
+      
+        <!-- Radio buttons -->
+        <p>Favorite Color:</p>
+        <label><input type="radio" name="color" value="Red"> Red</label>
+        <label><input type="radio" name="color" value="Blue"> Blue</label>
+        <label><input type="radio" name="color" value="Green"> Green</label><br><br>
+      
+        <!-- Dropdown menu -->
+        <label for="food">Favorite Food:</label>
+        <select id="food" name="food">
+          <option value="Pizza">Pizza</option>
+          <option value="Burgers">Burgers</option>
+          <option value="Salad">Salad</option>
+        </select><br><br>
+      
+        <!-- Additional field (Date picker as an example) -->
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" name="birthdate"><br><br>
+      
+        <!-- Button -->
+        <button onclick="handleSubmit(event)">Submit</button>
+      </form>
+      
+  </form>
+
+  <script>
+    <script>
+  function handleSubmit(event) {
+    event.preventDefault(); // Prevent page from refreshing
+
+    // Get values from the form
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const isSubscribed = document.getElementById("subscribe").checked;
+    const color = document.querySelector('input[name="color"]:checked')?.value;
+    const food = document.getElementById("food").value;
+    const birthdate = document.getElementById("birthdate").value;
+
+    // BONUS (10 XP): Show an alert with the info
+    alert(`Hello, ${name}!\nAge: ${age}\nSubscribed: ${isSubscribed}\nFavorite Color: ${color}\nFavorite Food: ${food}\nBirthdate: ${birthdate}`);
+  }
+</script>
+
+  </script>
+
+</body>
+</html>
