@@ -2,33 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Food Menu Example</title>
+  <title>Craft Supplies Array Example</title>
 </head>
 <body>
 
-<h1>Julia's Restaurant Menu</h1>
+<h1>Craft Supplies Example</h1>
 
-<div id="menu"></div> <!-- This is where the menu will show -->
+<div id="output"></div>
+
+<h2>Craft Colors:</h2>
+<div id="colors"></div>
 
 <script>
-// Step 1: Create the menu array
-let menuItems = [
-  ["#pizza", "Pizza"],
-  ["#burger", "Burger"],
-  ["#pasta", "pasta"],
-  ["#salad", "Salad"],
-  ["#icecreamcake", "Ice Cream Cake"]
-];
+// Step 1: Create and display the array
+let craftSupplies = ["Paint", "Scissors", "Glue"];
+document.getElementById("output").innerHTML += "Original supplies: " + craftSupplies.join(", ") + "<br>";
 
-// Step 2: Loop through the menu and build the HTML
-let output = "";
+// Step 2: Add more values
+craftSupplies.push("Yarn", "Beads");
+document.getElementById("output").innerHTML += "After adding more: " + craftSupplies.join(", ") + "<br>";
 
-for (let i = 0; i < menuItems.length; i++) {
-  output += '<a href="' + menuItems[i][0] + '">' + menuItems[i][1] + '</a><br>';
+// Step 3: Sort the array
+craftSupplies.sort();
+document.getElementById("output").innerHTML += "Sorted supplies: " + craftSupplies.join(", ") + "<br>";
+
+// Step 4: Remove one item
+craftSupplies.shift();
+document.getElementById("output").innerHTML += "After removing one item: " + craftSupplies.join(", ") + "<br>";
+
+// Step 5: Display the second item (index 1)
+document.getElementById("output").innerHTML += "Second item: " + craftSupplies[1] + "<br>";
+
+// Step 6: Use a method (slice)
+let selectedSupplies = craftSupplies.slice(1, 3);
+document.getElementById("output").innerHTML += "Sliced supplies: " + selectedSupplies.join(", ") + "<br>";
+
+// Bonus: Use a loop to show colors
+let colors = ["red", "blue", "green"];
+
+for (let i = 0; i < colors.length; i++) {
+  document.getElementById("colors").innerHTML += 
+    '<div style="color:' + colors[i] + ';">' + colors[i] + '</div>';
 }
-
-// Step 3: Output to the page
-document.getElementById("menu").innerHTML = output;
 </script>
 
 </body>
