@@ -1,64 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>JavaScript If Statements Assignment</title>
+  <meta charset="UTF-8">
+  <title>Food Menu Example</title>
 </head>
 <body>
 
-<h1>JavaScript If Statements Example</h1>
+<h1>Julia's Restaurant Menu</h1>
 
-<div id="output"></div> <!-- Div to show the results -->
+<div id="menu"></div> <!-- This is where the menu will show -->
 
 <script>
-// 3 variables
-let age = 21;
-let name = "Julia";
-let favoriteColor = "Maroon";
-let output = ""; // Create an empty string to hold output
+// Step 1: Create the menu array
+let menuItems = [
+  ["#pizza", "Pizza"],
+  ["#burger", "Burger"],
+  ["#pasta", "pasta"],
+  ["#salad", "Salad"],
+  ["#icecreamcake", "Ice Cream Cake"]
+];
 
-// If statement
-if (age > 18) {
-    output += name + " is an adult.<br>";
+// Step 2: Loop through the menu and build the HTML
+let output = "";
+
+for (let i = 0; i < menuItems.length; i++) {
+  output += '<a href="' + menuItems[i][0] + '">' + menuItems[i][1] + '</a><br>';
 }
 
-// If...else statement
-if (favoriteColor === "Maroon") {
-    output += "Maroon is a cool color!<br>";
-} else {
-    output += "That's a nice color too!<br>";
-}
-
-// If...else if...else statement
-if (age < 13) {
-    output += name + " is a child.<br>";
-} else if (age >= 13 && age < 20) {
-    output += name + " is a teenager.<br>";
-} else {
-    output += name + " is an adult.<br>";
-}
-
-// Bonus switch statement
-let dayOfWeek = "Monday";
-
-switch (dayOfWeek) {
-    case "Monday":
-        output += "Start of the week!<br>";
-        break;
-    case "Friday":
-        output += "Almost weekend!!!<br>";
-        break;
-    case "Sunday":
-        output += "Wind Down Sunday.<br>";
-        break;
-    default:
-        output += "It's a regular day.<br>";
-}
-
-// Show all the output in the page
-document.getElementById("output").innerHTML = output;
+// Step 3: Output to the page
+document.getElementById("menu").innerHTML = output;
 </script>
 
 </body>
 </html>
-
